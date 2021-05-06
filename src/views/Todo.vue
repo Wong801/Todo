@@ -15,7 +15,7 @@
       <option :value="allTodos.length">{{ allTodos.length }}</option>
     </select>
     <div v-show="searchResult.length > 0">
-      <h1 class="m-4 text-2xl font-lg">Search Result:</h1>
+      <h1 class="m-4 text-2xl font-lg">Search Results:</h1>
       <div class="grid grid-cols-2 grid-gap-4 md:grid-cols-4">
       <div v-for="(todo, index) in searchResult" :key="todo._id">
         <div class="border max-w-md m-4 rounded-lg">

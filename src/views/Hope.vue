@@ -15,6 +15,7 @@
       <option :value="allHopes.length">{{ allHopes.length }}</option>
     </select>
     <div v-show="searchResult.length > 0">
+      <h1 class="m-4 text-2xl font-lg">Search Results:</h1>
       <div class="grid md:grid-cols-2 grid-gap-4 xl:grid-cols-4 lg:grid-cols-3">
         <div v-for="(hope, index) in searchResult" :key="hope._id">
           <div class="border max-w-md m-4 rounded-lg">
