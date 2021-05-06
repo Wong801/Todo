@@ -2,7 +2,7 @@
   <div v-if="loading" class="min-h-screen">
     <h1 class="text-4xl font-bold text-center py-8 bg-blue border-b-2">Wall of Hopes</h1>
     <form class="my-6 m-auto w-4/5 flex border rounded-xl" @submit="searchTodo">
-      <input type="search" placeholder="Search for Hopes..." v-model="keyword" class="w-full text-center h-8 py-4 rounded-xl">
+      <input type="search" placeholder="Search who write the hopes..." v-model="keyword" class="w-full text-center h-8 py-4 rounded-xl">
       <input type="submit" value="Search" class="w-1/5 rounded-xl cursor-pointer">
     </form>
     <button class="m-4 mb-6 border w-52 h-16 bg-gray-300 rounded-lg font-bold text-xl" @click="newHope">Make new Hope</button>
@@ -157,7 +157,7 @@ export default defineComponent({
       if(keyword === '') {
         return ''
       }
-      return hopes.filter((hope: any) => hope.title.toLowerCase().match(keyword.toLowerCase()))
+      return hopes.filter((hope: any) => hope.from.toLowerCase().match(keyword.toLowerCase()))
     }
   },
   async created() {
