@@ -143,9 +143,11 @@ export default defineComponent({
     },
     addNewTodo(newTodo: Object) {
       store.dispatch('addTodo', newTodo)
+      .then(() => location.reload())
     },
     deleteTodo(id: string) {
       store.dispatch('deleteTodo', id)
+      .then(() => location.reload())
     },
     editTodo(id: string) {
       this.toggleEditTodo = !this.toggleEditTodo
@@ -157,6 +159,7 @@ export default defineComponent({
         ...editedTodo
       }
       store.dispatch('editTodo', changedTodo)
+      .then(() => location.reload())
     },
     searchTodo(e: Event) {
       e.preventDefault()
@@ -166,6 +169,7 @@ export default defineComponent({
       e.preventDefault();
       const param: number = parseInt(this.limit) 
       store.dispatch('limitTodos', param)
+      .then(() => location.reload())
     } 
   },
   computed: {
