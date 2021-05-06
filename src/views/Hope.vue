@@ -24,8 +24,8 @@
             <p class="p-2 text-sm md:text-base">Hope: {{ hope.hope }}</p>
             <p class="p-2 text-sm md:text-base">Created at: {{ hope.createdAt }}</p>
             <div class="flex justify-evenly py-4">
-              <button class="border w-20 py-2" @click="editTodo(hope._id)">Edit</button>
-              <button class="border w-20 py-2" @click="deleteTodo(todo._id)">Delete</button>
+              <button class="border w-20 py-2" @click="edithope(hope._id)">Edit</button>
+              <button class="border w-20 py-2" @click="deletehope(hope._id)">Delete</button>
             </div>
           </div>
         </div>
@@ -41,8 +41,8 @@
             <p class="p-2 text-sm md:text-base">Hope: {{ hope.hope }}</p>
             <p class="p-2 text-sm md:text-base">Created at: {{ hope.createdAt }}</p>
             <div class="flex justify-evenly py-4">
-              <button class="border w-20 py-2" @click="editTodo(hope._id)">Edit</button>
-              <button class="border w-20 py-2" @click="deleteTodo(todo._id)">Delete</button>
+              <button class="border w-20 py-2" @click="editHope(hope._id)">Edit</button>
+              <button class="border w-20 py-2" @click="deleteHope(hope._id)">Delete</button>
             </div>
           </div>
         </div>
@@ -59,7 +59,7 @@
             <p class="p-2 text-sm md:text-base">Created at: {{ hope.createdAt }}</p>
             <div class="flex justify-evenly py-4">
               <button class="border w-20 py-2" @click="editHope(hope._id)">Edit</button>
-              <button class="border w-20 py-2" @click="deleteHope(todo._id)">Delete</button>
+              <button class="border w-20 py-2" @click="deleteHope(hope._id)">Delete</button>
             </div>
           </div>
         </div>
