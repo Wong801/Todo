@@ -1,7 +1,8 @@
 <template>
   <router-view/>
   <footer id="nav">
-    <router-link to="/">Home</router-link> |
+    <router-link to="/todo">Todo Project</router-link> |
+    <router-link to="/hope">Hope Project</router-link> |
     <router-link to="/about">About</router-link>
   </footer>
 </template>

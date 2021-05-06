@@ -32,7 +32,7 @@ const Todos = {
     actions: {
         async fetchTodos(context: {commit: (arg0: string, arg1: ITodo[]) => void}) {
             const response: AxiosResponse = await axios.get
-            ('https://wong801todoapi.herokuapp.com/api/todos');
+            ('https://wong801simpleapi.herokuapp.com/api/todos');
             const todo = TodoMapper(response)
             await context.commit('setTodos', todo);
             return todo;
@@ -42,14 +42,14 @@ const Todos = {
             desc: string
         }) {
             const response: AxiosResponse = await axios.post
-            ('https://wong801todoapi.herokuapp.com/api/todos', { ...payload });
+            ('https://wong801simpleapi.herokuapp.com/api/todos', { ...payload });
             await context.commit('newTodo', response.data)
         },
         async deleteTodo(context: any, payload: {
             id: string
         }) {
             const response: AxiosResponse = await axios.delete
-            (`https://wong801todoapi.herokuapp.com/api/todos/${payload}`);
+            (`https://wong801simpleapi.herokuapp.com/api/todos${payload}`);
             return response 
         },
         async editTodo(context: any, payload: {
@@ -62,14 +62,14 @@ const Todos = {
                 desc: payload.desc
             }
             const response: AxiosResponse = await axios.put
-            (`https://wong801todoapi.herokuapp.com/api/todos/${payload.id}`, { ...editedTodo })
+            (`https://wong801simpleapi.herokuapp.com/api/todos${payload.id}`, { ...editedTodo })
             return response
         },
         async limitTodos(context: {commit: (arg0: string, arg1: ITodo[]) => void}, payload: {
             limit: number
         }) {
             const response: AxiosResponse = await axios.get
-            (`https://wong801todoapi.herokuapp.com/api/todos/${payload}`)
+            (`https://wong801simpleapi.herokuapp.com/api/todos${payload}`)
             const todo = TodoMapper(response)
             await context.commit('setLimTodos', todo);
             return todo;

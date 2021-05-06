@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div class="w-11/12 lg:w-10/12 xl:w-2/4 md:w-11/12 h-5/6 bg-white text-center rounded-lg">
+		<div class="overflow-auto w-11/12 lg:w-10/12 xl:w-2/4 md:w-11/12 h-10/12 max-h-full bg-white text-center rounded-lg">
 			<h1 class="text-2xl font-bold bg-blue w-full p-8">Edit Task</h1>
 			<form @submit="editTodo" class="flex flex-col p-8">
 				<label class="text-xl py-2 border-b-2">Title: </label>
@@ -28,6 +28,10 @@ export default defineComponent({
 	methods: {
 		editTodo(e: Event) {
 			e.preventDefault();
+			if(this.title === '') {
+				alert('Please Insert Title')
+				return ''
+			}
 			const editedTodo = {
 				title: this.title,
 				desc: this.desc
