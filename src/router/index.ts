@@ -5,7 +5,11 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    meta: {
+      auth: false,
+      title: 'Home'
+    }
   },
   {
     path: '/about',
@@ -13,17 +17,29 @@ const routes: Array<RouteRecordRaw> = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    meta: {
+      auth: false,
+      title: 'About'
+    }
   },
   {
     path: '/todo',
     name: 'Todo',
-    component: () => import('../views/Todo.vue')
+    component: () => import('../views/Todo.vue'),
+    meta: {
+      auth: false,
+      title: 'Simple Todo App'
+    }
   },
   {
     path: '/hope',
     name: 'Hope',
-    component: () => import('../views/Hope.vue')
+    component: () => import('../views/Hope.vue'),
+    meta: {
+      auth: false,
+      title: 'Wall Of Hopes'
+    }
   },
 ]
 
