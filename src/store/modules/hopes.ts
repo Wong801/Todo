@@ -50,7 +50,7 @@ const Hopes = {
             id: string
         }) {
             const response: AxiosResponse = await axios.delete
-            (`https://wong801simpleapi.herokuapp.com/api/hopes${payload}`);
+            (`https://wong801simpleapi.herokuapp.com/api/hopes/${payload}`);
             return response 
         },
         async editHope(context: any, payload: {
@@ -65,14 +65,14 @@ const Hopes = {
                 hope: payload.hope
             }
             const response: AxiosResponse = await axios.put
-            (`https://wong801simpleapi.herokuapp.com/api/hopes${payload.id}`, { ...editedHope })
+            (`https://wong801simpleapi.herokuapp.com/api/hopes/${payload.id}`, { ...editedHope })
             return response
         },
         async limitHopes(context: {commit: (arg0: string, arg1: IHope[]) => void}, payload: {
             limit: number
         }) {
             const response: AxiosResponse = await axios.get
-            (`https://wong801simpleapi.herokuapp.com/api/hopes${payload}`)
+            (`https://wong801simpleapi.herokuapp.com/api/hopes/${payload}`)
             const hope = HopeMapper(response)
             await context.commit('setLimHopes', hope);
             return hope;

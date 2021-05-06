@@ -37,7 +37,7 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Hope',
     component: () => import('../views/Hope.vue'),
     meta: {
-      auth: false,
+      auth: true,
       title: 'Wall Of Hopes'
     }
   },
