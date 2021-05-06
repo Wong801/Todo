@@ -108,11 +108,9 @@ export default defineComponent({
     },
     addNewHope(newTodo: Object) {
       store.dispatch('addHope', newTodo)
-      .then(() => location.reload())
     },
     deleteHope(id: string) {
       store.dispatch('deleteHope', id)
-      .then(() => location.reload())
     },
     editHope(id: string) {
       this.toggleEditHope = !this.toggleEditHope
@@ -124,7 +122,6 @@ export default defineComponent({
         ...editedHope
       }
       store.dispatch('editHope', changedHope)
-      .then(() => location.reload())
     },
     searchTodo(e: Event) {
       e.preventDefault()
