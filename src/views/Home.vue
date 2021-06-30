@@ -6,6 +6,5 @@
       <router-link to="/todo" class="text-black">Simple Todo App</router-link> ||
       <router-link to="/hope" class="text-black">Wall Of Hopes</router-link>
     </div>
-    <img src="https://asset.indosport.com/article/image/q/80/282577/dota_22-169.jpg?w=750&h=423" alt="">
   </div>
 </template>
